@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="same-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Gatucho Autopilot — Administração</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <section class="login-shell" id="loginShell">
+    <div class="login-card">
+      <div class="brand-lock"><span class="brand-mark">G</span><span>Gatucho Autopilot</span></div>
+      <p class="eyebrow">/ área privada</p>
+      <h1>Robôs trabalhando.<br><em>Vocês criando.</em></h1>
+      <p class="login-copy">Acesso protegido pelo Supabase Auth. Nenhuma senha administrativa fica no GitHub.</p>
+      <form id="loginForm" novalidate>
+        <label>E-mail administrativo
+          <input type="email" id="loginEmail" autocomplete="username" required placeholder="email@dominio.com">
+        </label>
+        <label>Senha
+          <input type="password" id="loginPassword" autocomplete="current-password" required placeholder="••••••••••••">
+        </label>
+        <button class="primary-button wide" type="submit" id="loginButton">Entrar com segurança</button>
+        <p class="form-error" id="loginError" role="alert"></p>
+      </form>
+      <div class="setup-warning" id="configWarning" hidden>
+        <strong>Configuração pendente.</strong> Preencha somente a URL e a Publishable Key em <code>supabase-config.js</code>. Segredos nunca entram nesse arquivo.
+      </div>
+    </div>
+  </section>
+
+  <div class="app-shell" id="appShell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand">
+        <div class="side-brand-mark">G</div>
+        <div><strong>Gatucho</strong><span>Autopilot</span></div>
+      </div>
+      <nav class="side-nav" aria-label="Administração">
+        <button class="nav-item active" data-view="overview"><span>◫</span>Visão geral</button>
+        <button class="nav-item" data-view="agents"><span>✦</span>Agentes</button>
+        <button class="nav-item" data-view="products"><span>▣</span>Produtos</button>
+        <button class="nav-item" data-view="content"><span>≡</span>Conteúdo</button>
+        <button class="nav-item" data-view="runs"><span>⌁</span>Execuções</button>
+        <button class="nav-item" data-view="security"><span>⌾</span>Integrações</button>
+      </nav>
+      <div class="side-footer">
+        <a href="index.html" target="_blank" rel="noopener">Abrir site ↗</a>
+        <button id="logoutButton">Sair</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button>
+        <div><p class="eyebrow" id="viewEyebrow">/ controle</p><h2 id="viewTitle">Visão geral</h2></div>
+        <div class="session-pill"><span class="status-dot ok"></span>Sessão autenticada</div>
+      </header>
+
+      <div class="main-content">
+        <section class="view active" id="view-overview">
+          <div class="hero-admin">
+            <div>
+              <p class="eyebrow">/ orquestrador</p>
+              <h1>Venda automática,<br><em>sem virar social media.</em></h1>
+              <p>O sistema pesquisa oportunidades, produz ativos, mede comportamento anônimo e fecha a transação na Hotmart.</p>
+            </div>
+            <label class="autopilot-control">
+              <span><strong>AUTOPILOT</strong><small id="autopilotText">desligado</small></span>
+              <input type="checkbox" id="autopilotToggle">
+              <span class="switch" aria-hidden="true"></span>
+            </label>
+          </div>
+
+          <div class="metric-grid" id="metricGrid">
+            <article class="metric-card"><span>Visualizações · 30d</span><strong id="metricViews">—</strong><small>eventos anônimos</small></article>
+            <article class="metric-card"><span>Cliques em produto · 30d</span><strong id="metricClicks">—</strong><small>intenção observada</small></article>
+            <article class="metric-card"><span>Vendas aprovadas · 30d</span><strong id="metricSales">—</strong><small>Hotmart webhook</small></article>
+            <article class="metric-card"><span>Receita observada · 30d</span><strong id="metricRevenue">—</strong><small id="metricCurrency">eventos recebidos</small></article>
+          </div>
+
+          <div class="two-column">
+            <article class="panel">
+              <div class="panel-head"><div><p class="eyebrow">/ sistema</p><h3>Estado das integrações</h3></div><button class="ghost-button small" id="refreshHealth">Atualizar</button></div>
+              <div class="health-list" id="healthList"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+            </article>
+            <article class="panel">
+              <div class="panel-head"><div><p class="eyebrow">/ agora</p><h3>Últimas ações dos robôs</h3></div></div>
+              <div class="activity-list" id="recentActivity"><p class="muted">Carregando…</p></div>
+            </article>
+          </div>
+
+          <article class="panel pilot-panel">
+            <div class="pilot-copy">
+              <p class="eyebrow">/ produto piloto</p>
+              <h3>Pais Conectados, Filhos Saudáveis</h3>
+              <p>Fluxo prioritário: Radar → Conteúdo → Isca → Conversa → Venda → Hotmart → Analista → Otimizador.</p>
+            </div>
+            <div class="pilot-actions">
+              <button class="primary-button" data-run-agent="radar">Executar Radar</button>
+              <button class="ghost-button" data-view-link="agents">Ver todos os agentes</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="view-agents">
+          <div class="section-intro"><div><p class="eyebrow">/ equipe autônoma</p><h1>Agentes</h1><p>Defina quem pode apenas rascunhar, quem exige aprovação e quem pode executar automaticamente.</p></div></div>
+          <div class="agents-grid" id="agentsGrid"></div>
+        </section>
+
+        <section class="view" id="view-products">
+          <div class="section-intro split"><div><p class="eyebrow">/ catálogo</p><h1>Produtos</h1><p>O site público lê este catálogo diretamente do Supabase. O checkout continua dentro da Hotmart.</p></div><button class="primary-button" id="syncHotmartButton">Sincronizar Hotmart</button></div>
+          <div class="product-layout">
+            <article class="panel product-list-panel"><div class="panel-head"><h3>Catálogo persistente</h3><button class="ghost-button small" id="newProductButton">+ Novo</button></div><div class="product-list" id="productList"></div></article>
+            <article class="panel sticky-form">
+              <div class="panel-head"><div><p class="eyebrow">/ edição</p><h3 id="productFormTitle">Novo produto</h3></div></div>
+              <form id="productForm">
+                <input type="hidden" id="productId">
+                <div class="field-grid">
+                  <label class="full">Título<input id="productTitle" required maxlength="160"></label>
+                  <label>Slug<input id="productSlug" required pattern="[a-z0-9-]+"></label>
+                  <label>Categoria<select id="productCategory"><option value="curso">Curso</option><option value="agente">Agente IA</option><option value="outro">Outro</option></select></label>
+                  <label class="full">Descrição<textarea id="productDescription" rows="4"></textarea></label>
+                  <label>Cor<input id="productColor" type="color" value="#4ECDC4"></label>
+                  <label>Emoji<input id="productEmoji" maxlength="12" placeholder="✦"></label>
+                  <label>Badge<input id="productBadge" maxlength="80"></label>
+                  <label>Ordem<input id="productOrder" type="number" value="100"></label>
+                  <label class="full">Tags<input id="productTags" placeholder="Família, Educação, IA"></label>
+                  <label class="full">URL pública/fallback<input id="productPublicUrl" type="url"></label>
+                  <label class="full">Checkout Hotmart<input id="productCheckoutUrl" type="url"></label>
+                  <label>Hotmart Product UCODE<input id="productUcode" placeholder="U00000000X"></label>
+                  <label>Oferta<input id="productOfferCode" placeholder="código da oferta"></label>
+                </div>
+                <div class="check-row"><label><input type="checkbox" id="productOwned"> Produto próprio na Hotmart</label><label><input type="checkbox" id="productPublished" checked> Publicado</label><label><input type="checkbox" id="productActive" checked> Ativo</label></div>
+                <div class="form-actions"><button class="primary-button" type="submit">Salvar</button><button class="danger-button" type="button" id="deleteProductButton" hidden>Arquivar</button></div>
+                <p class="form-message" id="productFormMessage"></p>
+              </form>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-content">
+          <div class="section-intro"><div><p class="eyebrow">/ fila editorial</p><h1>Conteúdo</h1><p>Os agentes geram rascunhos; vocês controlam o que é aprovado e publicado. Artigos publicados podem virar páginas estáticas automaticamente.</p></div></div>
+          <div class="filter-row" id="contentFilters"><button class="filter active" data-filter="all">Tudo</button><button class="filter" data-filter="rascunho">Rascunhos</button><button class="filter" data-filter="aprovado">Aprovados</button><button class="filter" data-filter="publicado">Publicados</button></div>
+          <div class="content-list" id="contentList"></div>
+        </section>
+
+        <section class="view" id="view-runs">
+          <div class="section-intro"><div><p class="eyebrow">/ observabilidade</p><h1>Execuções</h1><p>Cada ação dos agentes fica registrada para permitir auditoria e comparação de resultados.</p></div></div>
+          <div class="runs-table-wrap"><table class="runs-table"><thead><tr><th>Quando</th><th>Agente</th><th>Status</th><th>Origem</th><th>Resumo</th></tr></thead><tbody id="runsBody"></tbody></table></div>
+        </section>
+
+        <section class="view" id="view-security">
+          <div class="section-intro"><div><p class="eyebrow">/ segurança + integrações</p><h1>Integrações</h1><p>Esta tela nunca exibe o conteúdo dos segredos; apenas confirma se eles estão configurados.</p></div></div>
+          <div class="security-grid">
+            <article class="panel"><p class="eyebrow">/ Supabase</p><h3>Persistência e autenticação</h3><p>Auth real, RLS em todas as tabelas expostas, Edge Functions para operações privilegiadas e catálogo público somente de itens publicados.</p><div class="integration-status" id="supabaseStatus">Verificando…</div></article>
+            <article class="panel"><p class="eyebrow">/ Hotmart</p><h3>Checkout + eventos</h3><p>Credenciais ficam nos Secrets. Webhook recebe eventos, remove PII e grava apenas dados necessários para o funil.</p><div class="integration-status" id="hotmartStatus">Verificando…</div></article>
+            <article class="panel"><p class="eyebrow">/ Gemini</p><h3>Raciocínio dos agentes</h3><p>Chamado apenas no backend. O Radar pode usar Pesquisa Google com grounding; nenhuma chave é enviada ao navegador.</p><div class="integration-status" id="geminiStatus">Verificando…</div></article>
+            <article class="panel"><p class="eyebrow">/ Cron</p><h3>Execução recorrente</h3><p>Supabase Cron + Vault pode acionar os agentes sem n8n. A chave de cron fica fora do código.</p><div class="integration-status" id="cronStatus">Verificando…</div></article>
+          </div>
+          <article class="panel security-notes"><h3>Regras aplicadas</h3><ul><li>Sem senha, hash de senha, client secret ou service role no repositório.</li><li>Sem nome civil no admin, metadados ou prompts dos agentes.</li><li>Eventos de comprador são reduzidos e pseudonimizados por hash antes de persistir.</li><li>O site público só possui Publishable Key e leitura RLS do catálogo/conteúdo publicado.</li><li>Agentes não publicam automaticamente por padrão; autonomia pode ser elevada individualmente.</li></ul></article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="content-dialog" id="contentDialog"><button class="dialog-close" id="dialogClose">✕</button><p class="eyebrow" id="dialogType"></p><h2 id="dialogTitle"></h2><p class="dialog-excerpt" id="dialogExcerpt"></p><pre id="dialogContent"></pre></dialog>
+
+  <script src="supabase-config.js"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

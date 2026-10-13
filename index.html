@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Gatucho Creative Lab — Design · Tecnologia · Educação</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-name">Gatucho</span>
+    <span class="nav-logo-sub">Creative Lab</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#universo">Universo</a></li>
+    <li><a href="#manifesto">Manifesto</a></li>
+  </ul>
+  <a href="https://hotmart.com/pt-br/club/gatucho-estudio-criativo" target="_blank" class="nav-cta">Acessar Hotmart</a>
+</nav>
+
+<!-- ═══════════════════════════════════════ HERO ═══ -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-text">
+    <p class="hero-eyebrow">Estúdio Criativo Digital — 2024</p>
+    <h1 class="hero-h1">
+      Criamos o<br>
+      <em>futuro</em>
+      que educa.
+    </h1>
+    <p class="hero-p">Cursos, agentes de IA e produtos digitais interativos que unem design, tecnologia, arte e sustentabilidade para transformar como você aprende e vive.</p>
+    <div class="hero-actions">
+      <a href="#produtos" class="btn-primary">Explorar Produtos</a>
+      <a href="#universo" class="btn-ghost">Nosso Universo</a>
+    </div>
+  </div>
+
+  <!-- HERO MINI ORBITAL -->
+  <div class="hero-orbital-wrap">
+    <svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg" id="heroSvg">
+      <defs>
+        <filter id="hglow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="hglow2"><feGaussianBlur stdDeviation="16" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <radialGradient id="hbg" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#1c2421"/>
+          <stop offset="100%" stop-color="#111413"/>
+        </radialGradient>
+        <radialGradient id="hglow-r" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4ECDC4" stop-opacity=".12"/>
+          <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <circle cx="280" cy="280" r="276" fill="url(#hbg)" stroke="rgba(78,205,196,.06)" stroke-width="1"/>
+      <circle cx="280" cy="280" r="108" class="o-ring o-ring-pulse"/>
+      <circle cx="280" cy="280" r="172" class="o-ring o-ring-pulse2"/>
+      <circle cx="280" cy="280" r="230" fill="none" stroke="rgba(78,205,196,.03)" stroke-width="1" stroke-dasharray="2 10"/>
+      <circle cx="280" cy="280" r="116" fill="url(#hglow-r)"/>
+
+      <!-- circuit lines hero — 8 nodes -->
+      <line x1="280" y1="174" x2="280" y2="112" class="o-circ-line flow" id="hl0"/>
+      <circle cx="280" cy="109" r="2.5" class="o-circ-dot o-blink" id="hd0"/>
+      <line x1="394" y1="166" x2="440" y2="120" class="o-circ-line flow" id="hl1"/>
+      <circle cx="442" cy="118" r="2.5" class="o-circ-dot o-blink" id="hd1" style="animation-delay:.4s"/>
+      <line x1="388" y1="280" x2="450" y2="280" class="o-circ-line flow" id="hl2"/>
+      <circle cx="453" cy="280" r="2.5" class="o-circ-dot o-blink" id="hd2" style="animation-delay:.8s"/>
+      <line x1="394" y1="394" x2="440" y2="440" class="o-circ-line flow" id="hl3"/>
+      <circle cx="442" cy="442" r="2.5" class="o-circ-dot o-blink" id="hd3" style="animation-delay:1.2s"/>
+      <line x1="280" y1="386" x2="280" y2="448" class="o-circ-line flow" id="hl4"/>
+      <circle cx="280" cy="451" r="2.5" class="o-circ-dot o-blink" id="hd4" style="animation-delay:1.6s"/>
+      <line x1="166" y1="394" x2="120" y2="440" class="o-circ-line flow" id="hl5"/>
+      <circle cx="118" cy="442" r="2.5" class="o-circ-dot o-blink" id="hd5" style="animation-delay:2s"/>
+      <line x1="172" y1="280" x2="110" y2="280" class="o-circ-line flow" id="hl6"/>
+      <circle cx="107" cy="280" r="2.5" class="o-circ-dot o-blink" id="hd6" style="animation-delay:2.4s"/>
+      <line x1="166" y1="166" x2="120" y2="120" class="o-circ-line flow" id="hl7"/>
+      <circle cx="118" cy="118" r="2.5" class="o-circ-dot o-blink" id="hd7" style="animation-delay:2.8s"/>
+
+      <!-- 8 mini nodes on hero — clickable, link to orbital section -->
+      <!-- Arte top -->
+      <g class="node-g" data-id="0" id="hn0" transform="translate(280,88)" onclick="goOrbital(0)">
+        <rect x="-36" y="-20" width="72" height="40" rx="10" class="node-pill"/>
+        <!-- brush -->
+        <path d="M-10,-4 Q0,-12 8,-4 Q12,2 4,8 Q-2,10 -6,6 Z" fill="none" stroke="#4ECDC4" stroke-width="1.2" opacity=".7"/>
+        <line x1="-6" y1="6" x2="-12" y2="14" stroke="#4ECDC4" stroke-width="1.4" stroke-linecap="round" opacity=".5"/>
+        <text x="0" y="19" class="node-lbl" font-size="7.5">Arte</text>
+      </g>
+      <!-- Educação top-right -->
+      <g class="node-g" data-id="1" id="hn1" transform="translate(453,107)" onclick="goOrbital(1)">
+        <rect x="-40" y="-20" width="80" height="40" rx="10" class="node-pill"/>
+        <rect x="-10" y="-10" width="12" height="16" rx="1.5" fill="none" stroke="#4ECDC4" stroke-width="1.2" opacity=".7"/>
+        <line x1="-10" y1="-5" x2="2" y2="-5" stroke="#4ECDC4" stroke-width=".8" opacity=".4"/>
+        <line x1="-8" y1="-1" x2="0" y2="-1" stroke="#4ECDC4" stroke-width=".8" opacity=".4"/>
+        <text x="8" y="4" class="node-lbl" font-size="7.5">Educação</text>
+      </g>
+      <!-- Tecnologia right -->
+      <g class="node-g" data-id="2" id="hn2" transform="translate(476,280)" onclick="goOrbital(2)">
+        <rect x="-44" y="-20" width="88" height="40" rx="10" class="node-pill"/>
+        <rect x="-32" y="-8" width="14" height="14" rx="1.5" fill="none" stroke="#4ECDC4" stroke-width="1.2" opacity=".7"/>
+        <line x1="-36" y1="-3" x2="-32" y2="-3" stroke="#4ECDC4" stroke-width="1.2" opacity=".7"/>
+        <line x1="-18" y1="-3" x2="-14" y2="-3" stroke="#4ECDC4" stroke-width="1.2" opacity=".7"/>
+        <line x1="-28" y1="-12" x2="-28" y2="-8" stroke="#4ECDC4" stroke-width="1.2" opacity=".7"/>
+        <text x="8" y="4" class="node-lbl" font-size="7">Tecnologia</text>
+      </g>
+      <!-- Finanças bottom-right -->
+      <g class="node-g" data-id="3" id="hn3" transform="translate(453,453)" onclick="goOrbital(3)">
+        <rect x="-38" y="-20" width="76" height="40" rx="10" class="node-pill"/>
+        <polyline points="-12,8 -6,0 -1,4 5,-6 10,-2" fill="none" stroke="#4ECDC4" stroke-width="1.3" stroke-linejoin="round" opacity=".7"/>
+        <circle cx="10" cy="-2" r="2" fill="#4ECDC4" opacity=".7"/>
+        <text x="0" y="18" class="node-lbl" font-size="7.5">Finanças</text>
+      </g>
+      <!-- Saúde bottom -->
+      <g class="node-g" data-id="4" id="hn4" transform="translate(280,472)" onclick="goOrbital(4)">
+        <rect x="-34" y="-20" width="68" height="40" rx="10" class="node-pill"/>
+        <path d="M0,8 C0,8 -7,3 -7,-1 C-7,-4 -5,-6 -2,-6 C-1,-6 0,-5 0,-4 C0,-5 1,-6 2,-6 C5,-6 7,-4 7,-1 C7,3 0,8 0,8Z" fill="none" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+        <text x="0" y="18" class="node-lbl" font-size="7.5">Saúde</text>
+      </g>
+      <!-- Esporte bottom-left -->
+      <g class="node-g" data-id="5" id="hn5" transform="translate(107,453)" onclick="goOrbital(5)">
+        <rect x="-36" y="-20" width="72" height="40" rx="10" class="node-pill"/>
+        <circle cx="-4" cy="-8" r="2.5" fill="none" stroke="#4ECDC4" stroke-width="1.2" opacity=".7"/>
+        <line x1="-4" y1="-5.5" x2="-5" y2="2" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+        <line x1="-5" y1="2" x2="-9" y2="8" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+        <line x1="-5" y1="2" x2="-1" y2="8" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+        <line x1="-4" y1="-2" x2="0" y2="-5" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+        <text x="8" y="4" class="node-lbl" font-size="7.5">Esporte</text>
+      </g>
+      <!-- Nutrição left -->
+      <g class="node-g" data-id="6" id="hn6" transform="translate(84,280)" onclick="goOrbital(6)">
+        <rect x="-42" y="-20" width="84" height="40" rx="10" class="node-pill"/>
+        <path d="M-14,6 C-14,6 -10,-6 -2,-9 C4,-11 6,-7 4,-2 C2,3 -4,7 -8,8 Z" fill="none" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+        <line x1="-14" y1="6" x2="-4" y2="-2" stroke="#4ECDC4" stroke-width=".9" opacity=".5"/>
+        <text x="10" y="4" class="node-lbl" font-size="7">Nutrição</text>
+      </g>
+      <!-- Sustentabilidade top-left -->
+      <g class="node-g" data-id="7" id="hn7" transform="translate(107,107)" onclick="goOrbital(7)">
+        <rect x="-48" y="-20" width="96" height="40" rx="10" class="node-pill"/>
+        <circle cx="-20" cy="-2" r="6" fill="none" stroke="#4ECDC4" stroke-width="1.2" opacity=".7"/>
+        <path d="M-20,-8 L-18,-4 L-22,-4 Z" fill="#4ECDC4" opacity=".6"/>
+        <path d="M-20,4 L-22,8 L-18,8 Z" fill="#4ECDC4" opacity=".6"/>
+        <text x="6" y="4" class="node-lbl" font-size="6.5">Sustentabilidade</text>
+      </g>
+
+      <!-- CENTER LOGO -->
+      <g class="logo-float" id="heroLogo">
+        <circle cx="280" cy="280" r="90" class="logo-shell-c"/>
+        <circle cx="280" cy="280" r="88" fill="none" stroke="rgba(78,205,196,.05)" stroke-width="6"/>
+        <circle cx="280" cy="280" r="95" fill="#4ECDC4" opacity=".03" filter="url(#hglow2)"/>
+
+        <g transform="translate(280,274)" filter="url(#hglow)">
+          <path d="M0,-52 C28,-49 49,-28 50,0 C52,28 35,50 8,56 C-21,62 -50,43 -54,14 C-58,-15 -40,-48 -14,-57 C-7,-59 -3,-58 0,-54 C3,-50 1,-42 -6,-37 C-21,-29 -35,-12 -32,8 C-29,27 -12,40 8,37 C27,34 40,18 38,-1 C35,-22 19,-36 0,-35 C-13,-35 -21,-25 -18,-14 C-15,-3 -6,4 4,1" class="logo-p"/>
+          <path d="M20,-32 C35,-38 47,-33 52,-24 M52,-24 L57,-19 M52,-24 L56,-32" class="logo-p-t"/>
+          <circle cx="57" cy="-19" r="2.8" class="logo-dot-c"/>
+          <circle cx="57" cy="-33" r="2.8" class="logo-dot-c"/>
+          <path d="M38,10 C47,6 54,12 55,21 M55,21 L60,24 M55,21 L61,16" class="logo-p-t"/>
+          <circle cx="61" cy="24" r="2.8" class="logo-dot-c"/>
+          <circle cx="62" cy="15" r="2.8" class="logo-dot-c"/>
+          <path d="M14,38 C20,47 15,56 5,57" class="logo-p-t"/>
+          <circle cx="4" cy="59" r="2.8" class="logo-dot-c"/>
+          <path d="M0,-20 C8,-18 14,-10 12,0 C10,10 2,16 -6,12 C-14,9 -17,0 -11,-7 C-7,-12 0,-12 3,-7 C5,-3 2,1 -1,1" class="logo-p" opacity=".55"/>
+          <circle cx="0" cy="-1" r="3.5" fill="#4ECDC4" opacity=".9"/>
+          <circle cx="0" cy="-1" r="6.5" fill="none" stroke="#4ECDC4" stroke-width=".7" opacity=".35"/>
+        </g>
+        <text x="280" y="350" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800" font-size="11" fill="#4ECDC4" letter-spacing="4" opacity=".9">GATUCHO</text>
+        <text x="280" y="364" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="300" font-size="7" fill="#4ECDC4" letter-spacing="5" opacity=".45">CREATIVE LAB</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="scroll-bar"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════ MARQUEE ═══ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="mq-item"><span class="mq-dot"></span>Design</span>
+    <span class="mq-item"><span class="mq-dot"></span>Tecnologia</span>
+    <span class="mq-item"><span class="mq-dot"></span>Arte</span>
+    <span class="mq-item"><span class="mq-dot"></span>Sustentabilidade</span>
+    <span class="mq-item"><span class="mq-dot"></span>Educação</span>
+    <span class="mq-item"><span class="mq-dot"></span>Acessibilidade</span>
+    <span class="mq-item"><span class="mq-dot"></span>Inovação</span>
+    <span class="mq-item"><span class="mq-dot"></span>Inteligência Artificial</span>
+    <span class="mq-item"><span class="mq-dot"></span>Nutrição</span>
+    <span class="mq-item"><span class="mq-dot"></span>Finanças</span>
+    <span class="mq-item"><span class="mq-dot"></span>Design</span>
+    <span class="mq-item"><span class="mq-dot"></span>Tecnologia</span>
+    <span class="mq-item"><span class="mq-dot"></span>Arte</span>
+    <span class="mq-item"><span class="mq-dot"></span>Sustentabilidade</span>
+    <span class="mq-item"><span class="mq-dot"></span>Educação</span>
+    <span class="mq-item"><span class="mq-dot"></span>Acessibilidade</span>
+    <span class="mq-item"><span class="mq-dot"></span>Inovação</span>
+    <span class="mq-item"><span class="mq-dot"></span>Inteligência Artificial</span>
+    <span class="mq-item"><span class="mq-dot"></span>Nutrição</span>
+    <span class="mq-item"><span class="mq-dot"></span>Finanças</span>
+  </div>
+</div>
+
+<!-- ═══════ ABOUT ═══ -->
+<section class="about-section" id="sobre">
+  <div class="section-wrap">
+    <div class="about-grid">
+      <div class="rev-l about-left">
+        <p class="sec-label">/ sobre o estúdio</p>
+        <h2 class="about-headline">Interdisciplinar por natureza,<br>digital por vocação.</h2>
+      </div>
+      <div class="rev">
+        <div class="about-body">
+          <p>Nascemos do desejo de criar algo maior: experiências que conectam, transformam e fazem sentido. Unimos arte, natureza, ciência e tecnologia para desenvolver produtos que encantam, educam e evoluem — da infância à vida adulta.</p>
+          <p>Começamos dentro de casa, buscando proporcionar vivências mais significativas para nossos filhos. Hoje, expandimos essa missão criando ferramentas que ajudam outras pessoas a organizarem suas vidas, aprenderem e se reconectarem com o que realmente importa.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="stat-n">5</div><div class="stat-l">Produtos ativos</div></div>
+          <div class="stat"><div class="stat-n">3</div><div class="stat-l">Agentes de IA</div></div>
+          <div class="stat"><div class="stat-n">8</div><div class="stat-l">Áreas de atuação</div></div>
+          <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Possibilidades</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX 1 -->
+<div class="par-text" aria-hidden="true"><div class="par-inner" id="p1">CRIAMOS · EDUCAMOS · TRANSFORMAMOS ·</div></div>
+
+<!-- ═══════ PRODUCTS ═══ -->
+<section class="products-section" id="produtos">
+  <div class="section-wrap">
+    <div class="section-header rev">
+      <div>
+        <p class="sec-label">/ portfólio</p>
+        <h2 class="sec-title">Produtos</h2>
+      </div>
+      <span class="sec-count">05 itens</span>
+    </div>
+
+    <!-- CURSOS -->
+    <div class="products-group">
+      <p class="group-label">Cursos</p>
+      <div class="cursos-grid rev" id="cursosGrid">
+        <a href="https://hotmart.com/pt-br/club/gatucho-estudio-criativo/pais-conectados-filhos-saudaveis-um-guia-pratico-e-divertido/U96578138R?off=4kz82uzh" target="_blank" class="curso-card static-product" data-c="pais" data-product-slug="pais-conectados-filhos-saudaveis">
+          <div class="cc-bar" style="background:var(--col-pais)"></div>
+          <div class="cc-top">
+            <span class="cc-badge" style="color:var(--col-pais);border-color:var(--col-pais)">Curso</span>
+            <span class="cc-num">01</span>
+          </div>
+          <div class="cc-emoji">👨‍👩‍👧</div>
+          <div>
+            <h3 class="cc-title">Pais Conectados,<br>Filhos Saudáveis</h3>
+            <p class="cc-desc">Um guia prático e divertido para criar vínculos reais numa era digital — com ferramentas, rotinas e muito afeto.</p>
+            <div class="cc-footer">
+              <div class="cc-tags">
+                <span class="tag">Família</span>
+                <span class="tag">Saúde Digital</span>
+                <span class="tag">Educação</span>
+              </div>
+              <div class="cc-arrow" style="border-color:var(--col-pais);color:var(--col-pais)">↗</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://go.hotmart.com/T99527076O" target="_blank" class="curso-card static-product" data-c="outono" data-product-slug="outono-com-as-criancas">
+          <div class="cc-bar" style="background:var(--col-outono)"></div>
+          <div class="cc-top">
+            <span class="cc-badge" style="color:var(--col-outono);border-color:var(--col-outono)">Curso</span>
+            <span class="cc-num">02</span>
+          </div>
+          <div class="cc-emoji">🍂</div>
+          <div>
+            <h3 class="cc-title">Outono com as Crianças</h3>
+            <p class="cc-desc">Vivências naturais imprimíveis + robôs inteligentes. Onde a natureza encontra a tecnologia para despertar curiosidade.</p>
+            <div class="cc-footer">
+              <div class="cc-tags">
+                <span class="tag">Natureza</span>
+                <span class="tag">STEM</span>
+                <span class="tag">Criatividade</span>
+              </div>
+              <div class="cc-arrow" style="border-color:var(--col-outono);color:var(--col-outono)">↗</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- AGENTES -->
+    <div class="products-group">
+      <p class="group-label">Agentes de Inteligência Artificial</p>
+      <div class="agentes-grid rev" id="agentesGrid">
+
+        <a href="https://go.hotmart.com/S105379989Y" target="_blank" class="agente-card static-product" data-c="dinheiro" data-product-slug="dinheiro-sob-controle-com-ia">
+          <div class="ag-icon" style="background:rgba(74,158,255,.1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4A9EFF" stroke-width="1.5" stroke-linecap="round">
+              <polyline points="3,17 7,11 11,14 15,5 19,9"/><circle cx="19" cy="9" r="1.5" fill="#4A9EFF" stroke="none"/>
+              <line x1="3" y1="20" x2="21" y2="20"/>
+            </svg>
+          </div>
+          <div>
+            <div class="ag-name">Dinheiro Sob Controle com IA</div>
+            <div class="ag-desc">Do caos ao controle em 7 passos. Um agente que transforma sua relação com as finanças pessoais de forma prática e inteligente.</div>
+          </div>
+          <span class="ag-badge" style="color:var(--col-dinheiro);border-color:rgba(74,158,255,.25)">Finanças · IA</span>
+          <span class="ag-arrow">→</span>
+        </a>
+
+        <a href="https://go.hotmart.com/K105381213J" target="_blank" class="agente-card static-product" data-c="nutri" data-product-slug="nutriprecision-ai">
+          <div class="ag-icon" style="background:rgba(180,94,255,.1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B45EFF" stroke-width="1.5" stroke-linecap="round">
+              <path d="M3,18 C3,18 5,6 13,4 C18,3 20,7 18,12 C16,16 10,18 6,20 Z"/>
+              <line x1="3" y1="18" x2="13" y2="10"/>
+              <circle cx="13" cy="10" r="1" fill="#B45EFF" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <div class="ag-name">NutriPrecision AI</div>
+            <div class="ag-desc">Assistente clínico especializado em nutrição vegana. Recomendações baseadas em evidências, personalizadas para cada perfil.</div>
+          </div>
+          <span class="ag-badge" style="color:var(--col-nutri);border-color:rgba(180,94,255,.25)">Nutrição · Vegana</span>
+          <span class="ag-arrow">→</span>
+        </a>
+
+        <a href="https://go.hotmart.com/K105381900I" target="_blank" class="agente-card static-product" data-c="contabil" data-product-slug="contabil-ai-pro">
+          <div class="ag-icon" style="background:rgba(255,69,96,.1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF4560" stroke-width="1.5" stroke-linecap="round">
+              <rect x="4" y="4" width="14" height="14" rx="2"/>
+              <line x1="4" y1="9" x2="18" y2="9"/><line x1="9" y1="4" x2="9" y2="18"/>
+              <line x1="0" y1="9" x2="4" y2="9"/><line x1="18" y1="9" x2="22" y2="9"/>
+              <line x1="9" y1="0" x2="9" y2="4"/><line x1="9" y1="18" x2="9" y2="22"/>
+              <circle cx="11" cy="11" r="2" fill="none" stroke="#FF4560"/>
+            </svg>
+          </div>
+          <div>
+            <div class="ag-name">Contábil AI Pro</div>
+            <div class="ag-desc">Assistentes inteligentes para contadores. Automação, análise e precisão para escritórios contábeis modernos.</div>
+          </div>
+          <span class="ag-badge" style="color:var(--col-contabil);border-color:rgba(255,69,96,.25)">Contabilidade · Pro</span>
+          <span class="ag-arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ ORBITAL UNIVERSE SECTION ═══ -->
+<section class="orbital-section" id="universo">
+  <div class="section-wrap">
+    <div class="orbital-inner">
+
+      <!-- LEFT TEXT -->
+      <div class="rev-l">
+        <p class="sec-label">/ universo gatucho</p>
+        <h2 class="orbital-text" style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.2vw,3.2rem);letter-spacing:-.025em;line-height:1.1;margin-bottom:1.5rem;">
+          Tudo gira em torno de <em style="font-style:normal;color:var(--teal)">uma ideia</em>:<br>conhecimento que transforma.
+        </h2>
+        <p style="font-size:.95rem;line-height:1.8;color:var(--fg-dim);max-width:44ch;">Clique em cada área para explorar como nossos produtos se conectam a cada dimensão da vida. Arte, tecnologia, saúde, finanças, educação — tudo interligado.</p>
+        <p class="orbital-hint">Interativo — clique nos nós</p>
+
+        <!-- DRAWER (detail panel inside section) -->
+        <div class="o-drawer" id="oDrawer">
+          <div class="o-drawer-bar" id="oDrawerBar"></div>
+          <span class="o-close" id="oClose">✕</span>
+          <div class="o-drawer-inner" id="oDrawerInner"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT ORBITAL SVG (full) -->
+      <div class="orbital-svg-wrap rev">
+        <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" id="mainSvg">
+          <defs>
+            <filter id="mglow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="mglow2"><feGaussianBlur stdDeviation="18" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <radialGradient id="mbg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1e2724"/>
+              <stop offset="100%" stop-color="#111413"/>
+            </radialGradient>
+            <radialGradient id="mhalo" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#4ECDC4" stop-opacity=".14"/>
+              <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <circle cx="320" cy="320" r="316" fill="url(#mbg)" stroke="rgba(78,205,196,.06)" stroke-width="1"/>
+          <circle cx="320" cy="320" r="130" class="o-ring o-ring-pulse"/>
+          <circle cx="320" cy="320" r="210" class="o-ring o-ring-pulse2"/>
+          <circle cx="320" cy="320" r="275" fill="none" stroke="rgba(78,205,196,.03)" stroke-width="1" stroke-dasharray="2 12"/>
+          <circle cx="320" cy="320" r="136" fill="url(#mhalo)"/>
+
+          <!-- CIRCUIT LINES main -->
+          <line x1="320" y1="192" x2="320" y2="112" class="o-circ-line flow" id="ml0"/>
+          <circle cx="320" cy="109" r="3" class="o-circ-dot o-blink" id="md0"/>
+          <circle cx="320" cy="192" r="2" class="o-circ-dot" style="animation:dblink 2s .3s infinite"/>
+
+          <line x1="455" y1="185" x2="514" y2="126" class="o-circ-line flow" id="ml1"/>
+          <circle cx="516" cy="124" r="3" class="o-circ-dot o-blink" id="md1" style="animation-delay:.5s"/>
+          <circle cx="455" cy="185" r="2" class="o-circ-dot" style="animation:dblink 2s .7s infinite"/>
+
+          <line x1="448" y1="320" x2="528" y2="320" class="o-circ-line flow" id="ml2"/>
+          <circle cx="531" cy="320" r="3" class="o-circ-dot o-blink" id="md2" style="animation-delay:1s"/>
+          <circle cx="448" cy="320" r="2" class="o-circ-dot" style="animation:dblink 2s 1.1s infinite"/>
+
+          <line x1="455" y1="455" x2="514" y2="514" class="o-circ-line flow" id="ml3"/>
+          <circle cx="516" cy="516" r="3" class="o-circ-dot o-blink" id="md3" style="animation-delay:1.5s"/>
+          <circle cx="455" cy="455" r="2" class="o-circ-dot" style="animation:dblink 2s 1.5s infinite"/>
+
+          <line x1="320" y1="448" x2="320" y2="528" class="o-circ-line flow" id="ml4"/>
+          <circle cx="320" cy="531" r="3" class="o-circ-dot o-blink" id="md4" style="animation-delay:2s"/>
+          <circle cx="320" cy="448" r="2" class="o-circ-dot" style="animation:dblink 2s 1.9s infinite"/>
+
+          <line x1="185" y1="455" x2="126" y2="514" class="o-circ-line flow" id="ml5"/>
+          <circle cx="124" cy="516" r="3" class="o-circ-dot o-blink" id="md5" style="animation-delay:2.5s"/>
+          <circle cx="185" cy="455" r="2" class="o-circ-dot" style="animation:dblink 2s 2.3s infinite"/>
+
+          <line x1="192" y1="320" x2="112" y2="320" class="o-circ-line flow" id="ml6"/>
+          <circle cx="109" cy="320" r="3" class="o-circ-dot o-blink" id="md6" style="animation-delay:3s"/>
+          <circle cx="192" cy="320" r="2" class="o-circ-dot" style="animation:dblink 2s 2.7s infinite"/>
+
+          <line x1="185" y1="185" x2="126" y2="126" class="o-circ-line flow" id="ml7"/>
+          <circle cx="124" cy="124" r="3" class="o-circ-dot o-blink" id="md7" style="animation-delay:3.5s"/>
+          <circle cx="185" cy="185" r="2" class="o-circ-dot" style="animation:dblink 2s 3.1s infinite"/>
+
+          <!-- NODES main — 8 nodes, radius ~210 from center 320,320 -->
+          <!-- Top: (320,110) -->
+          <g class="node-g" data-id="0" id="mn0" transform="translate(320,108)">
+            <rect x="-46" y="-22" width="92" height="44" rx="12" class="node-pill"/>
+            <path d="M-18,-6 Q-8,-14 0,-6 Q4,0 -2,6 Q-7,8 -10,5 Z" fill="none" stroke="#4ECDC4" stroke-width="1.4" opacity=".75"/>
+            <line x1="-10" y1="5" x2="-15" y2="13" stroke="#4ECDC4" stroke-width="1.6" stroke-linecap="round" opacity=".5"/>
+            <text x="14" y="4" class="node-lbl">Arte</text>
+            <text x="14" y="13" class="node-sub">Design Digital</text>
+          </g>
+
+          <!-- Top-right: (514,126) -->
+          <g class="node-g" data-id="1" id="mn1" transform="translate(516,120)">
+            <rect x="-52" y="-22" width="104" height="44" rx="12" class="node-pill"/>
+            <rect x="-36" y="-12" width="14" height="18" rx="2" fill="none" stroke="#4ECDC4" stroke-width="1.4" opacity=".75"/>
+            <line x1="-36" y1="-6" x2="-22" y2="-6" stroke="#4ECDC4" stroke-width=".9" opacity=".4"/>
+            <line x1="-34" y1="-1" x2="-24" y2="-1" stroke="#4ECDC4" stroke-width=".9" opacity=".4"/>
+            <line x1="-32" y1="4" x2="-26" y2="4" stroke="#4ECDC4" stroke-width=".9" opacity=".4"/>
+            <text x="-2" y="4" class="node-lbl">Educação</text>
+            <text x="-2" y="13" class="node-sub">Conhecimento</text>
+          </g>
+
+          <!-- Right: (530,320) -->
+          <g class="node-g" data-id="2" id="mn2" transform="translate(534,320)">
+            <rect x="-54" y="-22" width="108" height="44" rx="12" class="node-pill"/>
+            <rect x="-40" y="-10" width="14" height="14" rx="2" fill="none" stroke="#4ECDC4" stroke-width="1.3" opacity=".75"/>
+            <line x1="-44" y1="-4" x2="-40" y2="-4" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+            <line x1="-26" y1="-4" x2="-22" y2="-4" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+            <line x1="-35" y1="-14" x2="-35" y2="-10" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+            <line x1="-35" y1="4" x2="-35" y2="8" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+            <circle cx="-33" cy="-3" r="3" fill="none" stroke="#4ECDC4" stroke-width="1"/>
+            <text x="2" y="4" class="node-lbl">Tecnologia</text>
+            <text x="2" y="13" class="node-sub">Inovação · Código</text>
+          </g>
+
+          <!-- Bottom-right: (514,514) -->
+          <g class="node-g" data-id="3" id="mn3" transform="translate(516,518)">
+            <rect x="-46" y="-22" width="92" height="44" rx="12" class="node-pill"/>
+            <polyline points="-30,8 -22,-2 -14,4 -6,-8 2,-4" fill="none" stroke="#4ECDC4" stroke-width="1.5" stroke-linejoin="round" opacity=".75"/>
+            <circle cx="2" cy="-4" r="2.5" fill="#4ECDC4" opacity=".8"/>
+            <text x="10" y="4" class="node-lbl">Finanças</text>
+            <text x="10" y="13" class="node-sub">Estratégia</text>
+          </g>
+
+          <!-- Bottom: (320,530) -->
+          <g class="node-g" data-id="4" id="mn4" transform="translate(320,534)">
+            <rect x="-44" y="-22" width="88" height="44" rx="12" class="node-pill"/>
+            <path d="M-12,8 C-12,8 -20,2 -20,-3 C-20,-8 -16,-11 -11,-11 C-9,-11 -7,-9 -7,-8 C-7,-9 -5,-11 -3,-11 C2,-11 6,-8 6,-3 C6,2 -2,8 -2,8 Z" fill="none" stroke="#4ECDC4" stroke-width="1.4" opacity=".75"/>
+            <polyline points="-18,0 -14,-3 -10,2 -7,-5 -3,-2" fill="none" stroke="#4ECDC4" stroke-width=".9" opacity=".6"/>
+            <text x="14" y="4" class="node-lbl">Saúde</text>
+            <text x="14" y="13" class="node-sub">Bem-estar</text>
+          </g>
+
+          <!-- Bottom-left: (126,514) -->
+          <g class="node-g" data-id="5" id="mn5" transform="translate(124,518)">
+            <rect x="-46" y="-22" width="92" height="44" rx="12" class="node-pill"/>
+            <circle cx="-22" cy="-10" r="3.5" fill="none" stroke="#4ECDC4" stroke-width="1.3" opacity=".75"/>
+            <line x1="-22" y1="-6.5" x2="-23" y2="2" stroke="#4ECDC4" stroke-width="1.4" opacity=".75"/>
+            <line x1="-23" y1="2" x2="-28" y2="10" stroke="#4ECDC4" stroke-width="1.4" opacity=".75"/>
+            <line x1="-23" y1="2" x2="-17" y2="10" stroke="#4ECDC4" stroke-width="1.4" opacity=".75"/>
+            <line x1="-22" y1="-3" x2="-16" y2="-8" stroke="#4ECDC4" stroke-width="1.4" opacity=".75"/>
+            <text x="-6" y="4" class="node-lbl">Esporte</text>
+            <text x="-6" y="13" class="node-sub">Movimento</text>
+          </g>
+
+          <!-- Left: (110,320) -->
+          <g class="node-g" data-id="6" id="mn6" transform="translate(106,320)">
+            <rect x="-52" y="-22" width="104" height="44" rx="12" class="node-pill"/>
+            <path d="M-36,8 C-36,8 -30,-8 -18,-12 C-10,-15 -8,-9 -10,-3 C-12,3 -20,8 -26,10 Z" fill="none" stroke="#4ECDC4" stroke-width="1.4" opacity=".75"/>
+            <line x1="-36" y1="8" x2="-22" y2="-2" stroke="#4ECDC4" stroke-width="1" opacity=".5"/>
+            <circle cx="-10" cy="-3" r="1.5" fill="#4ECDC4" opacity=".6"/>
+            <text x="4" y="4" class="node-lbl">Nutrição</text>
+            <text x="4" y="13" class="node-sub">Dietética · Vegana</text>
+          </g>
+
+          <!-- Top-left: (126,126) -->
+          <g class="node-g" data-id="7" id="mn7" transform="translate(122,120)">
+            <rect x="-56" y="-22" width="112" height="44" rx="12" class="node-pill"/>
+            <circle cx="-32" cy="-2" r="8" fill="none" stroke="#4ECDC4" stroke-width="1.3" opacity=".7"/>
+            <path d="M-32,-10 L-29,-5 L-35,-5 Z" fill="#4ECDC4" opacity=".65"/>
+            <path d="M-32,6 L-35,11 L-29,11 Z" fill="#4ECDC4" opacity=".65"/>
+            <path d="M-40,-2 L-35,1 L-35,-5 Z" fill="#4ECDC4" opacity=".65"/>
+            <text x="-10" y="4" class="node-lbl">Sustentabilidade</text>
+            <text x="-10" y="13" class="node-sub">Soluções Sustentáveis</text>
+          </g>
+
+          <!-- CENTER LOGO (main) -->
+          <g class="logo-float" id="mainLogo" style="cursor:pointer" onclick="openManifesto()">
+            <circle cx="320" cy="320" r="105" class="logo-shell-c"/>
+            <circle cx="320" cy="320" r="102" fill="none" stroke="rgba(78,205,196,.05)" stroke-width="7"/>
+            <circle cx="320" cy="320" r="112" fill="#4ECDC4" opacity=".025" filter="url(#mglow2)"/>
+
+            <g transform="translate(320,313)" filter="url(#mglow)">
+              <path d="M0,-60 C32,-56 56,-32 57,0 C58,32 40,57 9,64 C-22,71 -57,50 -62,16 C-67,-18 -46,-55 -16,-65 C-8,-68 -3,-66 0,-62 C3,-58 1,-48 -7,-43 C-24,-33 -40,-14 -37,9 C-33,31 -14,46 9,42 C31,38 46,20 43,-2 C40,-25 22,-41 0,-40 C-15,-40 -24,-29 -20,-16 C-16,-3 -6,5 5,1" class="logo-p"/>
+              <path d="M22,-37 C38,-44 54,-38 60,-28 M60,-28 L66,-22 M60,-28 L65,-38" class="logo-p-t"/>
+              <circle cx="66" cy="-22" r="3.5" class="logo-dot-c"/>
+              <circle cx="66" cy="-39" r="3.5" class="logo-dot-c"/>
+              <path d="M44,12 C55,7 63,14 63,24 M63,24 L70,28 M63,24 L70,17" class="logo-p-t"/>
+              <circle cx="71" cy="28" r="3.5" class="logo-dot-c"/>
+              <circle cx="72" cy="16" r="3.5" class="logo-dot-c"/>
+              <path d="M16,44 C24,54 17,65 6,66" class="logo-p-t"/>
+              <circle cx="5" cy="68" r="3.5" class="logo-dot-c"/>
+              <path d="M0,-23 C9,-21 16,-12 14,0 C12,12 3,18 -7,14 C-16,10 -19,0 -13,-8 C-8,-14 0,-14 3,-8 C5,-4 2,2 -1,2" class="logo-p" opacity=".6"/>
+              <circle cx="0" cy="-1" r="4" fill="#4ECDC4" opacity=".9"/>
+              <circle cx="0" cy="-1" r="7.5" fill="none" stroke="#4ECDC4" stroke-width=".8" opacity=".3"/>
+            </g>
+            <text x="320" y="402" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800" font-size="13" fill="#4ECDC4" letter-spacing="5" opacity=".9">GATUCHO</text>
+            <text x="320" y="418" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="300" font-size="8" fill="#4ECDC4" letter-spacing="5.5" opacity=".4">CREATIVE LAB</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX 2 -->
+<div class="par-text" aria-hidden="true"><div class="par-inner" id="p2">GATUCHO · CRIATIVO · LAB ·</div></div>
+
+<!-- ═══════ MANIFESTO ═══ -->
+<section class="manifesto-section" id="manifesto">
+  <div class="manifesto-bg"></div>
+  <div class="section-wrap">
+    <div class="rev">
+      <p class="sec-label">/ manifesto</p>
+      <blockquote class="manifesto-q">
+        Acreditamos que <em>conhecimento</em> sem <span class="ul">design</span> é ruído.<br>
+        E tecnologia sem <em>propósito</em> é vazio.
+      </blockquote>
+    </div>
+    <div class="manifesto-aside rev">
+      Acreditamos em um futuro mais consciente, humano e inteligente — e trabalhamos todos os dias para construir isso. Do design à IA, da infância à vida adulta.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PILLARS ═══ -->
+<section class="pillars-section">
+  <div class="section-wrap">
+    <div class="rev">
+      <p class="sec-label">/ nossos pilares</p>
+      <h2 class="sec-title">O que nos move</h2>
+    </div>
+    <div class="pillars-grid rev">
+      <div class="pillar"><div class="pillar-n">01</div><span class="pillar-icon">🎨</span><div class="pillar-name">Design como linguagem</div><p class="pillar-desc">Cada pixel carrega intenção. A estética é comunicação, inclusão, experiência.</p></div>
+      <div class="pillar"><div class="pillar-n">02</div><span class="pillar-icon">⚡</span><div class="pillar-name">Tecnologia com alma</div><p class="pillar-desc">Usamos IA e automação para ampliar o potencial humano — nunca para substituí-lo.</p></div>
+      <div class="pillar"><div class="pillar-n">03</div><span class="pillar-icon">🌱</span><div class="pillar-name">Sustentabilidade real</div><p class="pillar-desc">Do conteúdo vegan ao design acessível: sustentabilidade não é pauta, é cultura.</p></div>
+      <div class="pillar"><div class="pillar-n">04</div><span class="pillar-icon">♾️</span><div class="pillar-name">Educação sem fronteiras</div><p class="pillar-desc">Para crianças, profissionais, pais e contadores. O conhecimento não segrega.</p></div>
+      <div class="pillar"><div class="pillar-n">05</div><span class="pillar-icon">🔍</span><div class="pillar-name">Acessibilidade profunda</div><p class="pillar-desc">Design universal, linguagem clara, tecnologia assistiva. Ninguém fica de fora.</p></div>
+      <div class="pillar"><div class="pillar-n">06</div><span class="pillar-icon">🚀</span><div class="pillar-name">Praticidade acima de tudo</div><p class="pillar-desc">Nossos produtos funcionam no mundo real — na correria, no celular, na vida real.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══ -->
+<section class="cta-section">
+  <div class="cta-orb cta-orb-1"></div>
+  <div class="section-wrap">
+    <p class="sec-label rev" style="justify-content:center;display:block;text-align:center">/ disponível agora</p>
+    <h2 class="cta-title rev">Pronto para<br><em>começar?</em></h2>
+    <p class="cta-sub rev">Todos os produtos disponíveis na Hotmart</p>
+    <div class="cta-btns rev">
+      <a href="https://hotmart.com/pt-br/club/gatucho-estudio-criativo" target="_blank" class="btn-primary">Acessar Hotmart ↗</a>
+      <a href="#produtos" class="btn-outline">Ver Catálogo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══ -->
+<footer>
+  <div>
+    <div class="foot-brand">Gatucho Creative Lab</div>
+    <div class="foot-copy" style="margin-top:.35rem">Design · Tecnologia · Arte · Sustentabilidade · Educação</div>
+  </div>
+  <div class="foot-copy">© 2024 — Todos os direitos reservados</div>
+  <div class="foot-hotmart"><span class="live"></span>Vendas via Hotmart</div>
+</footer>
+
+<script>
+/* ─── CURSOR ─── */
+const cur = document.getElementById('cur');
+const ring = document.getElementById('cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  cur.style.transform=`translate(${mx-5}px,${my-5}px)`;
+});
+(function animRing(){
+  rx+=(mx-rx-17)*.12; ry+=(my-ry-17)*.12;
+  ring.style.transform=`translate(${rx}px,${ry}px)`;
+  requestAnimationFrame(animRing);
+})();
+document.querySelectorAll('a,button,.node-g,.curso-card,.agente-card,.pillar,.nav-cta').forEach(el=>{
+  el.addEventListener('mouseenter',()=>ring.classList.add('xl'));
+  el.addEventListener('mouseleave',()=>ring.classList.remove('xl'));
+});
+
+/* ─── NAV SCROLL ─── */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled', window.scrollY>60);
+});
+
+/* ─── PARALLAX ─── */
+const p1=document.getElementById('p1'), p2=document.getElementById('p2');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  if(p1) p1.style.transform=`translateX(${-y*.1}px)`;
+  if(p2) p2.style.transform=`translateX(${y*.07}px)`;
+});
+
+/* ─── REVEAL ─── */
+const revEls=document.querySelectorAll('.rev,.rev-l');
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);} });
+},{threshold:.1});
+revEls.forEach(el=>ro.observe(el));
+
+/* ─── CARD TILT ─── */
+document.querySelectorAll('.curso-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const dx=(e.clientX-r.left-r.width/2)/(r.width/2);
+    const dy=(e.clientY-r.top-r.height/2)/(r.height/2);
+    card.style.transform=`perspective(900px) rotateX(${-dy*3}deg) rotateY(${dx*3}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+
+/* ─── PILLAR STAGGER ─── */
+document.querySelectorAll('.pillar').forEach((p,i)=>p.style.transitionDelay=`${i*.06}s`);
+
+/* ─── NODE DATA ─── */
+const nodeData=[
+  {name:'Arte',sub:'Arte & Design Digital',emoji:'🎨',color:'#FF9FF3',
+   desc:'Criatividade e tecnologia fundidas. Produzimos cursos de design digital, experiências visuais e conteúdos que estimulam a expressão artística em todas as idades.',
+   products:['Design Digital','Criação Visual','Experiências Interativas']},
+  {name:'Educação',sub:'Conhecimento & Aprendizado',emoji:'📚',color:'#54A0FF',
+   desc:'Cursos e guias pedagógicos que transformam o aprendizado em algo vivo — para crianças, pais, profissionais e educadores que nunca param de aprender.',
+   products:['Pais Conectados, Filhos Saudáveis','Outono com as Crianças']},
+  {name:'Tecnologia',sub:'Inovação & Código',emoji:'⚡',color:'#4ECDC4',
+   desc:'Agentes de IA, chatbots e produtos digitais interativos que colocam tecnologia de ponta nas mãos de quem mais precisa. Simples, acessíveis e poderosos.',
+   products:['Contábil AI Pro','NutriPrecision AI','Dinheiro Sob Controle com IA']},
+  {name:'Finanças',sub:'Estratégia Financeira',emoji:'💰',color:'#F9CA24',
+   desc:'Inteligência financeira para pessoas reais. Do planejamento pessoal à contabilidade profissional — com IA como aliada para transformar o caos em controle.',
+   products:['Dinheiro Sob Controle com IA','Contábil AI Pro']},
+  {name:'Saúde',sub:'Bem-estar & Prevenção',emoji:'🫀',color:'#FF6B6B',
+   desc:'Conteúdos que integram bem-estar físico, mental e nutricional. Saúde é projeto de vida — e criamos ferramentas que tornam esse projeto mais fácil de sustentar.',
+   products:['NutriPrecision AI','Pais Conectados, Filhos Saudáveis']},
+  {name:'Esporte',sub:'Desempenho & Movimento',emoji:'🏃',color:'#FF9F43',
+   desc:'Movimento como estilo de vida. Conectamos corpo e mente — de atividades lúdicas para crianças a rotinas de desempenho para adultos ativos.',
+   products:['Missão dos Heróis (em breve)','Outono com as Crianças']},
+  {name:'Nutrição',sub:'Dietética & Vegana',emoji:'🥗',color:'#A3CB38',
+   desc:'Nutrição de precisão, foco em alimentação vegana e plant-based. O NutriPrecision AI é nosso assistente clínico especializado — evidências científicas na palma da mão.',
+   products:['NutriPrecision AI']},
+  {name:'Sustentabilidade',sub:'Soluções Sustentáveis',emoji:'🌱',color:'#6AB04C',
+   desc:'Sustentabilidade não é pauta — é cultura. Do conteúdo vegano ao design acessível, cada produto nasce com responsabilidade ambiental e social.',
+   products:['Outono com as Crianças','NutriPrecision AI']},
+];
+
+/* shared activate for any svg with ml*/
+let activeMain=null;
+const mainLines=[0,1,2,3,4,5,6,7].map(i=>document.getElementById(`ml${i}`));
+const mainDots =[0,1,2,3,4,5,6,7].map(i=>document.getElementById(`md${i}`));
+const mainNodes=[0,1,2,3,4,5,6,7].map(i=>document.getElementById(`mn${i}`));
+const drawer=document.getElementById('oDrawer');
+const drawerBar=document.getElementById('oDrawerBar');
+const drawerInner=document.getElementById('oDrawerInner');
+const oClose=document.getElementById('oClose');
+
+function resetMain(){
+  mainNodes.forEach(n=>{if(n)n.classList.remove('on');});
+  mainLines.forEach(l=>{if(l){l.style.opacity='.18';l.style.strokeWidth='.9';l.style.stroke='';}});
+  mainDots.forEach(d=>{if(d){d.style.opacity='.28';d.style.fill='';}});
+}
+
+function activateMain(idx){
+  if(activeMain===idx){resetMain();activeMain=null;drawer.classList.remove('open');return;}
+  resetMain(); activeMain=idx;
+  const nd=nodeData[idx];
+  if(mainNodes[idx]) mainNodes[idx].classList.add('on');
+  if(mainLines[idx]){mainLines[idx].style.opacity='.9';mainLines[idx].style.strokeWidth='2';mainLines[idx].style.stroke=nd.color;}
+  if(mainDots[idx]){mainDots[idx].style.opacity='1';mainDots[idx].style.fill=nd.color;}
+  drawerBar.style.background=nd.color;
+  drawerInner.innerHTML=`
+    <div class="o-drawer-icon">${nd.emoji}</div>
+    <div>
+      <div class="o-drawer-name">${nd.name}</div>
+      <div class="o-drawer-sub">${nd.sub}</div>
+      <div class="o-drawer-desc">${nd.desc}</div>
+      <div class="o-drawer-tags">${nd.products.map(p=>`<span class="o-drawer-tag">${p}</span>`).join('')}</div>
+    </div>`;
+  drawer.classList.add('open');
+}
+
+mainNodes.forEach((n,i)=>{ if(n) n.addEventListener('click',()=>activateMain(i)); });
+
+mainNodes.forEach((n,i)=>{
+  if(!n) return;
+  n.addEventListener('mouseenter',()=>{
+    if(activeMain===null && mainLines[i]){mainLines[i].style.opacity='.55';mainLines[i].style.strokeWidth='1.5';}
+  });
+  n.addEventListener('mouseleave',()=>{
+    if(activeMain===null && mainLines[i]){mainLines[i].style.opacity='.18';mainLines[i].style.strokeWidth='.9';}
+  });
+});
+
+oClose.addEventListener('click',()=>{ resetMain(); activeMain=null; drawer.classList.remove('open'); });
+
+/* Hero nodes just scroll to orbital section */
+document.querySelectorAll('#heroSvg .node-g').forEach(n=>{
+  n.addEventListener('click',()=>{
+    const id=parseInt(n.dataset.id);
+    document.getElementById('universo').scrollIntoView({behavior:'smooth'});
+    setTimeout(()=>activateMain(id),600);
+  });
+  n.addEventListener('mouseenter',()=>{
+    const i=parseInt(n.dataset.id);
+    const hl=document.getElementById(`hl${i}`);
+    if(hl){hl.style.opacity='.6';hl.style.strokeWidth='1.6';}
+    n.classList.add('on');
+  });
+  n.addEventListener('mouseleave',()=>{
+    const i=parseInt(n.dataset.id);
+    const hl=document.getElementById(`hl${i}`);
+    if(hl){hl.style.opacity='.18';hl.style.strokeWidth='.9';}
+    n.classList.remove('on');
+  });
+});
+
+function openManifesto(){
+  document.getElementById('manifesto').scrollIntoView({behavior:'smooth'});
+}
+function goOrbital(id){
+  document.getElementById('universo').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>activateMain(id),600);
+}
+
+/* Hero logo click */
+document.getElementById('heroLogo').style.cursor='pointer';
+document.getElementById('heroLogo').addEventListener('click',()=>{
+  document.getElementById('sobre').scrollIntoView({behavior:'smooth'});
+});
+</script>
+<!-- Gatucho Autopilot: catálogo persistente + métricas anônimas.
+     Segredos nunca ficam neste arquivo. -->
+<script src="supabase-config.js"></script>
+<script type="module" src="autopilot-public.js"></script>
+</body>
+</html>
